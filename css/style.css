@@ -1,0 +1,755 @@
+/* Global Styles */
+html {
+  box-sizing: border-box;
+  color: var(--color_azul);
+  margin: 1.8rem;
+  --tamanyo_h2: clamp(0.625rem, 0.5598rem + 0.3261vi, 0.8125rem);
+  --tamanyo_nav: clamp(0.6875rem, 0.6005rem + 0.4348vi, 0.9375rem);
+  --tamanyo_h1: clamp(1.4375rem, 1.3902rem + 0.303vi, 1.625rem);
+  position: relative;
+}
+html,
+body {
+  min-height: 100vh;
+}
+*::after,
+*::before {
+  box-sizing: inherit;
+}
+body {
+  margin: 0;
+}
+/* Root Variables */
+:root {
+  --color_azul: #0e2990;
+  font-family: "DM Sans", Helvetica, sans-serif;
+  font-weight: 400;
+}
+
+/* Typography
+.baskervville-regular-italic {
+    font-family: "Baskervville", serif;
+    font-weight: 400;
+    font-style: italic;
+}
+
+.dm-sans {
+    font-family: "DM Sans", sans-serif;
+    font-weight: 400;
+} */
+
+/* Text Styles */
+h1,
+.h2__nav {
+  font-family: "Baskervville", serif;
+  font-style: italic;
+  font-size: var(--tamanyo_h1);
+  font-weight: 100;
+  margin: 0 0 1rem;
+}
+
+h2,
+h3,
+.footer__a,
+.about__button--pdf,
+.works1__button--pdf {
+  font-size: var(--tamanyo_h2);
+  font-weight: 400;
+  margin: 0;
+}
+
+.h1__titulo {
+  font-family: "DM Sans", Helvetica, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  margin: 0;
+}
+
+/* Spacing  */
+.about__h2,
+.h3__text,
+.about__button--pdf {
+  padding: 2rem 0 1rem;
+}
+
+/* List Styles */
+ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  line-height: 24px;
+}
+
+/* Navigation and Titles */
+.navegacion,
+.h1__titulo {
+  font-size: var(--tamanyo_nav);
+}
+.show-menu {
+  opacity: 1;
+  visibility: visible;
+}
+/* Image Sizes */
+img.works__img--ovalo,
+.a__ovalo {
+  width: 2rem;
+  padding-top: 0.5rem;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+.body__picture--img {
+  width: 300px;
+}
+
+.works__img {
+  width: 15rem;
+}
+
+.works__picture {
+  width: fit-content;
+}
+
+/* Hover Effects */
+.works__picture {
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.index__nav--ul {
+  opacity: 0;
+  line-height: 23px;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.index__ovalo:hover ~ .works__picture,
+.index__ovalo:hover ~ picture.works__picture,
+.index__section--head:hover ul {
+  opacity: 1;
+}
+
+/* Pointer and Style */
+.index__h1 {
+  margin: 0;
+  cursor: pointer;
+}
+.index__ovalo {
+  cursor: pointer;
+  padding: 1rem;
+}
+
+a:hover,
+.underline,
+.header__li:hover {
+  text-decoration: underline;
+}
+
+.main__picture--img {
+  transition: opacity 0.5s ease;
+}
+figcaption {
+  display: none;
+}
+
+.flex-container {
+  min-height: 100vh;
+}
+/* Index Page Grid */
+.index__main {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, 24vh);
+  grid-template-areas:
+    "header works1 principal works2"
+    ". works1 principal works2"
+    ". works3 works3 works5"
+    ". works4 works4 works5";
+}
+
+.index__section--head {
+  grid-area: header;
+  width: fit-content;
+  height: fit-content;
+}
+
+/* Main Section Grid Areas */
+.main__section {
+  grid-area: principal;
+}
+
+.works3,
+.works4,
+.works5,
+.index__ovalo,
+.main__section,
+.works__section,
+.works1__section {
+  display: flex;
+  flex-direction: column;
+}
+
+.works4,
+.works3 {
+  flex-direction: row;
+}
+
+.works1,
+.works2,
+.works3,
+.works5,
+.index__ovalo,
+.main__section {
+  align-items: flex-end;
+}
+
+.works1,
+.works2,
+.works5 {
+  flex-direction: column-reverse;
+}
+.works2,
+.works1__picture,
+.works2__picture,
+.works4__picture,
+.works5__picture {
+  display: flex;
+}
+
+.works2,
+.works3,
+.works5 {
+  align-items: flex-start;
+}
+
+.works1 {
+  grid-area: works1;
+  justify-content: space-evenly;
+}
+
+.works2 {
+  grid-area: works2;
+  justify-content: center;
+}
+
+.works3 {
+  grid-area: works3;
+  justify-content: space-evenly;
+}
+
+.works4 {
+  grid-area: works4;
+}
+
+.works5 {
+  grid-area: works5;
+}
+
+/* Anchor Tags */
+a {
+  text-decoration: none;
+  color: var(--color_azul);
+}
+
+.a__ovalo {
+  grid-area: ovalo;
+  align-items: center;
+}
+
+/* Slider */
+.slider {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  justify-content: flex-start;
+  z-index: 2;
+  width: 100%;
+  height: auto;
+}
+
+.works2__slider--container {
+  grid-area: sliders_works2;
+}
+
+.slider__container {
+  position: relative;
+}
+
+.Slider__arrow {
+  width: 23%;
+  height: 56%;
+  background-color: transparent;
+  opacity: 0;
+  border: none;
+  position: absolute;
+  z-index: 1;
+}
+
+.Slider__img {
+  width: 100%;
+  display: none;
+  transition: all 0.5s ease;
+}
+
+.Slider__img.isVisible {
+  display: block;
+  z-index: 2;
+}
+
+.Slider__img:first-child {
+  position: static;
+}
+
+.Slider__arrow--next {
+  right: 0%;
+  cursor: e-resize;
+}
+
+.Slider__arrow--prev {
+  left: 50%;
+  cursor: w-resize;
+}
+
+/* Grid Layout for Works Sections */
+.works__main {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 48vh);
+  grid-template-areas:
+    "works . . ."
+    ". ovalo . .";
+}
+
+.works__section,
+.works1__section {
+  grid-area: works;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Grid Layouts for Individual Works Sections */
+.works1__main,
+.works2__main,
+.works3__main,
+.works4__main,
+.works5__main,
+.about__main {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, 24vh);
+}
+
+.works1__main {
+  grid-template-areas:
+    "works works works1-slider works1-slider"
+    ". . works1-slider works1-slider"
+    ". . works1-slider works1-slider"
+    ". . works1-slider works1-slider";
+}
+
+.works1__slider--container {
+  grid-area: works1-slider;
+}
+
+.works2__main {
+  grid-template-areas:
+    "works works works2-slider works2-slider"
+    ". . works2-slider works2-slider"
+    ". . works2-slider works2-slider"
+    ". . works2-slider works2-slider";
+}
+.works2__slider--container {
+  grid-area: works2-slider;
+}
+.works3__main {
+  grid-template-areas:
+    "works works works3-slider works3-slider"
+    ". . works3-slider works3-slider"
+    ". . works3-slider works3-slider"
+    ". . works3-slider works3-slider";
+}
+.works3__slider--container {
+  grid-area: works3-slider;
+}
+
+.works4__main {
+  grid-template-areas:
+    "works works works4-slider works4-slider"
+    ". . works4-slider works4-slider"
+    ". . works4-slider works4-slider"
+    ". . works4-slider works4-slider";
+}
+.works4__slider--container {
+  grid-area: works4-slider;
+}
+
+.works5__main {
+  grid-template-areas:
+    "works works works5-slider works5-slider"
+    ". . works5-slider works5-slider"
+    ". . works5-slider works5-slider"
+    ". . works5-slider works5-slider";
+}
+.works5__slider--container {
+  grid-area: works5-slider;
+}
+
+/* About Section Grid */
+.about__main {
+  grid-template-areas:
+    ". . section section"
+    ". . section section"
+    ". ovalo section section"
+    ". . section section";
+}
+
+.about__h1 {
+  grid-area: about;
+  position: absolute;
+  left: 2.5rem;
+}
+
+.about__section {
+  grid-area: section;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Footer Section */
+.footer {
+  display: inline-flex;
+  justify-content: space-between;
+  position: absolute;
+  bottom: 0;
+  width: 98.4%;
+  /* margin-top: 1rem;  */
+}
+
+/* Media Queries for devices with width between 480px and 1024px */
+@media (min-width: 520px) and (max-width: 1024px) {
+  /* Adjust margin for the HTML element */
+  html {
+    margin: 1rem 1rem 1.5rem;
+  }
+
+  /* List item line height adjustment */
+  ul {
+    line-height: 20px;
+  }
+
+  /* Image width adjustment for works images */
+  .works__img {
+    width: 11rem;
+  }
+
+  /* Slider arrow */
+  .Slider__arrow {
+    width: 32%;
+    height: 46%;
+  }
+
+  .Slider__arrow--next {
+    right: 3%;
+  }
+
+  .Slider__arrow--prev {
+    left: 34%;
+  }
+
+  /* Padding adjustments for work sections */
+  .works__section,
+  .works1__section {
+    padding-right: 0.5rem;
+  }
+
+  /* Main grid layout on Index page */
+  .index__main {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4, 24vh);
+    grid-template-areas:
+      "header works2 principal"
+      "works1 works2 works3"
+      "works5 works4 works3"
+      "works5 works4 .";
+  }
+
+  /* Adjust index ovalo */
+  .index__ovalo {
+    width: fit-content;
+    padding: 0.5rem;
+  }
+
+  /* Works grid */
+  .works1__main,
+  .works2__main,
+  .works3__main,
+  .works4__main,
+  .works5__main {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+  }
+
+  /* Main grid layout for all the works section */
+  .works__main {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 48vh);
+    grid-template-areas:
+      "works works ."
+      ". ovalo .";
+  }
+  .works1 {
+    display: flex;
+    justify-content: space-evenly;
+  }
+  .works1__main {
+    grid-template-areas:
+      "works works1-slider works1-slider"
+      "works works1-slider works1-slider"
+      ". works1-slider works1-slider"
+      ". works1-slider works1-slider";
+  }
+
+  .works2__main {
+    grid-template-areas:
+      "works works2-slider works2-slider"
+      "works works2-slider works2-slider"
+      ". works2-slider works2-slider"
+      ". works2-slider works2-slider";
+  }
+
+  .works3__main {
+    grid-template-areas:
+      "works works3-slider works3-slider"
+      "works works3-slider works3-slider"
+      ". works3-slider works3-slider"
+      ". works3-slider works3-slider";
+  }
+
+  .works3 {
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  .works4__main {
+    grid-template-areas:
+      "works works4-slider works4-slider"
+      "works works4-slider works4-slider"
+      ". works4-slider works4-slider"
+      ". works4-slider works4-slider";
+  }
+
+  .works4 {
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: flex-end;
+  }
+
+  .works5__main {
+    grid-template-areas:
+      "works works5-slider works5-slider"
+      ". works5-slider works5-slider"
+      ". works5-slider works5-slider"
+      ". works5-slider works5-slider";
+  }
+
+  .works5 {
+    align-items: flex-start;
+    justify-content: center;
+  }
+
+  /* Grid layout for About section */
+  .about__main {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    grid-template-areas:
+      ". section section"
+      ". section section"
+      "ovalo section section"
+      ". section section"
+      ". section section"
+      ". section section";
+  }
+  .footer {
+    bottom: 2rem;
+  }
+}
+/* Media Queries for devices with width between 250px and 480px */
+@media (min-width: 250px) and (max-width: 520px) {
+  /* Adjust margin for the HTML element */
+  html {
+    margin: 0.6rem;
+  }
+
+  /* List item line height adjustment */
+  ul {
+    line-height: 20px;
+  }
+
+  /* Slider arrow styles */
+  .Slider__arrow {
+    width: 50%;
+    height: 38%;
+  }
+
+  .Slider__arrow--next {
+    right: 0%;
+  }
+
+  .Slider__arrow--prev {
+    left: 0%;
+  }
+
+  /* Align text in section */
+  .section__text {
+    justify-content: flex-end;
+  }
+
+  /*  Padding adjustments */
+  .main__section {
+    padding: 0;
+  }
+
+  .slider,
+  .index__ovalo {
+    padding: 1rem 0;
+  }
+
+  .h3__text {
+    padding: 1rem 0 0.7rem;
+  }
+  .h2__nav {
+    margin-bottom: 0.5rem;
+  }
+  .works__img {
+    width: 8rem;
+  }
+
+  /* Main grid layout for index page */
+  .index__main {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(4, 24vh);
+    grid-template-areas:
+      "header principal"
+      "works1 works2"
+      "works4 works3"
+      "works5 works5";
+  }
+  /* Design adjustment for Works* in Index Page */
+  .works4,
+  .works2 {
+    justify-content: flex-end;
+  }
+  .works2 {
+    flex-direction: column-reverse;
+  }
+  .works3,
+  .works4,
+  .works5 {
+    flex-direction: column;
+  }
+
+  .works3,
+  .works5 {
+    align-items: center;
+  }
+
+  .works4 {
+    align-items: flex-start;
+  }
+  .works4,
+  .works5 {
+    justify-content: flex-start;
+  }
+  .section__works {
+    width: 100%;
+  }
+
+  /* Main grid layout for works section */
+  .works1__main,
+  .works2__main,
+  .works3__main,
+  .works4__main,
+  .works5__main {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 24vh);
+  }
+  .works__main {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 48vh);
+    grid-template-areas:
+      "works works"
+      ". ovalo";
+  }
+  /* Grid layout for Works section */
+  .works1__main {
+    grid-template-areas:
+      "works works"
+      "works1-slider works1-slider"
+      "works1-slider works1-slider"
+      "works1-slider works1-slider";
+  }
+
+  .works2__main {
+    grid-template-areas:
+      "works works"
+      "works2-slider works2-slider"
+      "works2-slider works2-slider"
+      "works2-slider works2-slider";
+  }
+
+  .works3__main {
+    grid-template-areas:
+      "works works"
+      "works3-slider works3-slider"
+      "works3-slider works3-slider"
+      "works3-slider works3-slider";
+  }
+
+  .works4__main {
+    grid-template-areas:
+      "works works"
+      "works4-slider works4-slider"
+      "works4-slider works4-slider"
+      "works4-slider works4-slider";
+  }
+
+  .works5__main {
+    grid-template-areas:
+      "works works"
+      "works5-slider works5-slider"
+      "works5-slider works5-slider"
+      "works5-slider works5-slider";
+  }
+
+  /* Grid layout for About section */
+  .about__main {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(8, 1fr);
+    grid-template-areas:
+      "section section"
+      "section section"
+      "section section"
+      "section section"
+      "section section"
+      "section section"
+      "section section"
+      "ovalo .";
+  }
+
+  /* Flex display for about heading */
+  .about__h1 {
+    display: flex;
+    position: static;
+  }
+  .footer {
+    bottom: 0;
+  }
+}
